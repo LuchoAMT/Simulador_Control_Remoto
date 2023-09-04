@@ -87,7 +87,12 @@ class simular {
           case "S":
             y -= 1;
             break;
-          
+          case "E": 
+            x += 1;
+            break;
+          case "O":
+            x -= 1;
+            break;
         }
       }
     }

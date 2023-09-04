@@ -48,4 +48,16 @@ describe("Simular movimiento", () => {
     const posFinal = sim.cambiarDireccion("AAA")
     expect(posFinal).toEqual("1,2S");
   });
+
+  it("Debería incrementar la posición X con un comando A", () => {
+    let sim = new simular("1,2E","AAA");
+    const posFinal = sim.cambiarDireccion("AAA")
+    expect(posFinal).toEqual("4,2E");
+  });
+
+  it("Debería reducir la posición X con un comando A", () => {
+    let sim = new simular("4,2O","AAA");
+    const posFinal = sim.cambiarDireccion("AAA")
+    expect(posFinal).toEqual("1,2O");
+  });
 });
