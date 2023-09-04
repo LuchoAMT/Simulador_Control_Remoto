@@ -15,8 +15,8 @@ class simular {
   validarArea(){
     const [x, y] = this.area.split(",")
     if(isNaN(parseInt(x)) || parseInt(x) < 0 || isNaN(parseInt(y)) || parseInt(y) < 0){
-      return false
-    };
+      return false;
+    }
     return true;
   }
   validarPos(pos){

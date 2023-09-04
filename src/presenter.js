@@ -19,7 +19,7 @@ form.addEventListener("submit", (event) => {
   if(!sim.validarPos(posInicial)){div.innerHTML = "<p>Error: La posición no es válida</p>";}
   if(!sim.validarComando(comandos)){div.innerHTML = "<p>Error: El comando no es válido</p>";}
 
-  if(sim.validarPos(posInicial) && sim.validarComando(comandos)){
+  if(sim.validarArea() && sim.validarPos(posInicial) && sim.validarComando(comandos)){
     div.innerHTML = "<p>" +
    "Posición inicial: " + sim.mostrarPosValida(posInicial) +
    "<br>" + "Comandos: " + sim.mostrarComandoValido(comandos) +
