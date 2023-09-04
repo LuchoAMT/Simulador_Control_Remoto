@@ -24,4 +24,10 @@ describe("Simular movimiento", () => {
     const com = sim.mostrarComandoValido("ADADADA")
     expect(com).toEqual("ADADADA");
   });
+
+  it("Debería cambiar la dirección con un comando I", () => {
+    let sim = new simular("1,2N","IIAI");
+    const posFinal = sim.cambiarDireccion("IIAI")
+    expect(posFinal).toEqual("1,2E");
+  });
 });

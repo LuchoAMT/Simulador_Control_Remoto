@@ -39,6 +39,30 @@ class simular {
     }
     return "Comando inválido";
   }
+  cambiarDireccion(com){
+    let posFinal = this.posIni;
+    let dir = posFinal.split(",")[1].slice(-1);
+    for(let i=0; i<com.length; i++){
+      if(com[i] === "I"){
+        switch(dir){
+          case "N":
+            dir = "O";
+            break;
+          case "O":
+            dir = "S";
+            break;
+          case "S":
+            dir = "E";
+            break;
+          case "E":
+            dir = "N";
+            break;
+        }
+      }
+    }
+    posFinal = posFinal.split(",")[0] + "," + posFinal.split(",")[1][0] + dir;
+    return posFinal;
+  }
 }
 
 export default simular;
