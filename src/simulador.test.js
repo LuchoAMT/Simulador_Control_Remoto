@@ -60,4 +60,16 @@ describe("Simular movimiento", () => {
     const posFinal = sim.cambiarDireccion("AAA")
     expect(posFinal).toEqual("1,2O");
   });
+
+  it("Debería validar un area de trabajo", () => {
+    let sim = new simular("6,6","4,2O","AAA");
+    const posFinal = sim.validarArea()
+    expect(posFinal).toEqual(true);
+  });
+
+  it("Debería mostrar fuera de limites al salirse del area", () => {
+    let sim = new simular("6,6","5,5E","AAA");
+    const posFinal = sim.cambiarDireccion("AAA")
+    expect(posFinal).toEqual("Fuera de los límites!");
+  });
 });

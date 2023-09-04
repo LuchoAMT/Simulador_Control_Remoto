@@ -50,6 +50,7 @@ class simular {
     return "Comando inválido";
   }
   cambiarDireccion(com){
+    let [aX, aY] = this.area.split(",");
     let posFinal = this.posIni;
     let sepPos = posFinal.split(",");
     let x = parseInt(sepPos[0]);
@@ -103,6 +104,9 @@ class simular {
             x -= 1;
             break;
         }
+      }
+      if(x > aX || x < 0 || y > aY || y < 0){
+        return "Fuera de los límites!";
       }
     }
     posFinal = x + "," + y + dir;
