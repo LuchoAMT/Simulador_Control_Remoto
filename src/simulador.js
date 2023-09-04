@@ -61,6 +61,22 @@ class simular {
             break;
         }
       }
+      if(com[i] === "D"){
+        switch(dir){
+          case "N":
+            dir = "E";
+            break;
+          case "E":
+            dir = "S";
+            break;
+          case "S":
+            dir = "O";
+            break;
+          case "O":
+            dir = "N";
+            break;
+        }
+      }
     }
     posFinal = sepPos[0] + "," + sepPos[1][0] + dir;
     return posFinal;
