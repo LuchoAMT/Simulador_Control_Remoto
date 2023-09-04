@@ -1,5 +1,6 @@
 class simular {
-  constructor(posIni, command){
+  constructor(area, posIni, command){
+    this.area = area;
     this.posIni = posIni;
     this.command = command;
   }
@@ -11,9 +12,19 @@ class simular {
       return false;
     }
   }
+  validarArea(){
+    const [x, y] = this.area.split(",")
+    if(isNaN(parseInt(x)) || parseInt(x) < 0 || isNaN(parseInt(y)) || parseInt(y) < 0){
+      return false
+    };
+    return true;
+  }
   validarPos(pos){
     const c1 = pos.split(",");
-    if(!isNaN(parseFloat(c1[0])) && !isNaN(parseFloat(c1[1])) && this.esDireccion(c1[1].slice(-1))){
+    let xPos = c1[0];
+    let yPos = c1[1][0];
+    let [x,y] = this.area.split(",");
+    if(!isNaN(parseFloat(xPos)) && xPos <= x && !isNaN(parseFloat(yPos)) && yPos <= y && this.esDireccion(c1[1].slice(-1))){
       return true;
     }
     return false;
@@ -43,8 +54,6 @@ class simular {
     let sepPos = posFinal.split(",");
     let x = parseInt(sepPos[0]);
     let y = parseInt(sepPos[1][0]);
-    console.log("final=" +posFinal);
-    console.log(sepPos);
     let dir = sepPos[1].slice(-1);
     for(let i=0; i<com.length; i++){
       if(com[i] === "I"){
