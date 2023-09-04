@@ -17,9 +17,14 @@ form.addEventListener("submit", (event) => {
 
   let sim = new simular(p,c);
 
-  div.innerHTML = "<p>" +
+  if(!sim.validarPos(p)){div.innerHTML = "<p>Error: La posición no es válida</p>";}
+  if(!sim.validarComando(c)){div.innerHTML = "<p>Error: El comando no es válido</p>";}
+
+  if(sim.validarPos(p) && sim.validarComando(c)){
+    div.innerHTML = "<p>" +
    "Posición inicial: " + sim.mostrarPosValida(p) +
    "<br>" + "Comandos: " + sim.mostrarComandoValido(c) +
    "<br>" + "Posición Final: " + sim.cambiarDireccion(c) 
    + "</p>";
+  }
 });
