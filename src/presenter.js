@@ -5,15 +5,16 @@ const coms = document.querySelector("#comandos");
 const form = document.querySelector("#controls-form");
 const div = document.querySelector("#resultado-div");
 
-let sim = new simular(pos,"ADADADA");
+let sim = new simular(pos.value,coms.value);
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
   const p = pos.value;
+  const c = coms.value;
 
   div.innerHTML = "<p>" +
    "Posición inicial: " + sim.mostrarPosValida(p) +
-   "<br>" + "Comandos: " + coms.value
+   "<br>" + "Comandos: " + sim.mostrarComandoValido(c);
    + "</p>";
 });

@@ -25,6 +25,20 @@ class simular {
     }
     return pos + " es una posición no válida";
   }
+  validarComando(com){
+    for(let i=0; i<com.length; i++){
+      if(com[i] !== "A" && com[i] !== "D" && com[i] !== "I"){
+        return false;
+      }
+      return true;
+    }
+  }
+  mostrarComandoValido(com){
+    if(this.validarComando(com) == true){
+      return com;
+    }
+    return "Comando inválido";
+  }
 }
 
 export default simular;

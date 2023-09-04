@@ -10,6 +10,18 @@ describe("Simular movimiento", () => {
   it("Debería devolver una posición inicial válida", () => {
     let sim = new simular("1,2S","ADADADA");
     const pos = sim.mostrarPosValida("1,2S")
-    expect(pos).toEqual("1,2S");
+    expect(pos).toEqual("1,2S es válida");
+  });
+
+  it("Debería validar un comando", () => {
+    let sim = new simular("1,2S","ADADADA");
+    const com = sim.validarComando("ADADADA")
+    expect(com).toEqual(true);
+  });
+
+  it("Debería mostrar un comando válido", () => {
+    let sim = new simular("1,2S","ADADADA");
+    const com = sim.mostrarComandoValido("ADADADA")
+    expect(com).toEqual("ADADADA");
   });
 });
