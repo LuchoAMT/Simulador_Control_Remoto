@@ -1,0 +1,7 @@
+1. Permitir ingresar pos inicial y mostrarla
+2. Validar que la pos inicial tenga formato válido -> mostrar un mensaje al usr.
+3. Permitir que se ingresen comandos y mostrarlos.
+4. Poder ejecutar un comando (I) y mostrar la pos final.
+5. Poder ejecutar un comando (D) y mostrar la pos final.
+6. Poder ejecutar un comando (A) y mostrar la pos final.
+7. Aviasar al usuario si la ejecución de los comandos hace que se salga del área definida.
