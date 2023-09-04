@@ -41,6 +41,8 @@ class simular {
   cambiarDireccion(com){
     let posFinal = this.posIni;
     let sepPos = posFinal.split(",");
+    let x = parseInt(sepPos[0]);
+    let y = parseInt(sepPos[1][0]);
     console.log("final=" +posFinal);
     console.log(sepPos);
     let dir = sepPos[1].slice(-1);
@@ -77,8 +79,19 @@ class simular {
             break;
         }
       }
+      if(com[i] === "A"){
+        switch(dir){
+          case "N":
+            y += 1;
+            break;
+          case "S":
+            y -= 1;
+            break;
+          
+        }
+      }
     }
-    posFinal = sepPos[0] + "," + sepPos[1][0] + dir;
+    posFinal = x + "," + y + dir;
     return posFinal;
   }
 }
