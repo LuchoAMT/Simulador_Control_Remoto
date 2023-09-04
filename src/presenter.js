@@ -5,6 +5,10 @@ const coms = document.querySelector("#comandos");
 const form = document.querySelector("#controls-form");
 const div = document.querySelector("#resultado-div");
 
+coms.addEventListener('input',function (){
+  this.value = this.value.toUpperCase();
+});
+
 let sim = new simular(pos.value,coms.value);
 
 form.addEventListener("submit", (event) => {
