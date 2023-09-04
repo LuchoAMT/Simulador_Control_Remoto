@@ -1,4 +1,3 @@
-const _ = require('lodash');
 class simular {
   constructor(posIni, command){
     this.posIni = posIni;
@@ -41,7 +40,10 @@ class simular {
   }
   cambiarDireccion(com){
     let posFinal = this.posIni;
-    let dir = posFinal.split(",")[1].slice(-1);
+    let sepPos = posFinal.split(",");
+    console.log("final=" +posFinal);
+    console.log(sepPos);
+    let dir = sepPos[1].slice(-1);
     for(let i=0; i<com.length; i++){
       if(com[i] === "I"){
         switch(dir){
@@ -60,7 +62,7 @@ class simular {
         }
       }
     }
-    posFinal = posFinal.split(",")[0] + "," + posFinal.split(",")[1][0] + dir;
+    posFinal = sepPos[0] + "," + sepPos[1][0] + dir;
     return posFinal;
   }
 }

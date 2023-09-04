@@ -9,16 +9,17 @@ coms.addEventListener('input',function (){
   this.value = this.value.toUpperCase();
 });
 
-let sim = new simular(pos.value,coms.value);
-
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
   const p = pos.value;
   const c = coms.value;
 
+  let sim = new simular(p,c);
+
   div.innerHTML = "<p>" +
    "Posición inicial: " + sim.mostrarPosValida(p) +
-   "<br>" + "Comandos: " + sim.mostrarComandoValido(c);
+   "<br>" + "Comandos: " + sim.mostrarComandoValido(c) +
+   "<br>" + "Posición Final: " + sim.cambiarDireccion(c) 
    + "</p>";
 });
